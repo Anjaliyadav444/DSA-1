@@ -1,52 +1,21 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include <stdio.h>
+int main() {
+    int n, i;
+    float num[10], sum = 0.0, avg;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    printf("Enter the numbers of elements: ");
+    scanf("%d", &n);
 
-# Precompiled Headers
-*.gch
-*.pch
+    
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+    for (i = 0; i < n; ++i) {
+        printf("%d. Enter number: ", i + 1);
+        scanf("%f", &num[i]);
+        sum += num[i];
+    }
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    avg = sum / n;
+    printf("Average = %.2f", avg);
+    return 0;
+}
